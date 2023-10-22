@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <title>index</title>
+</head>
+
+<body>
+    <div class="fog">
+        <div class="fog_container">
+          <div class="fog_img fog_img-first"></div>
+          <div class="fog_img fog_img-second"></div>
+        </div>
+    </div>
+    <header class="header center">
+        <img src="img/logo.svg" alt="logo" class="head_logo">
+        <nav class="header_menu">
+            <a href="#" class="menu_link">О марсе</a>
+            <a href="#" class="menu_link">Процесс</a>
+            <a href="#" class="menu_link">Билеты</a>
+            <a href="#" class="menu_link">Новости</a>
+            <a href="#" class="menu_link">Контакты</a>
+            <button class="header_btn">Купить билеты</button>
+        </nav>
+    </header>
+    <div class="main center">
+        <div class="main_img">
+            <svg width="10" height="605" viewBox="0 0 10 605" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+            >
+            <line x1="5" y1="1" x2="5" y2="600" stroke="#D9D9D9" stroke-width="3" />
+            <circle cx="5" cy="3" r="3" fill="#D9D9D9" />
+            <circle cx="5" cy="600" r="5" fill="#D9D9D9" class="end" />
+        </svg>
+        </div>
+        <div class="main_content">
+            <p class="main_subtitle">Точка назначения:</p>
+            <div class="main_title">
+                <div class="main_video">
+                    <video src="img/mars.m4v" autoplay muted loop playsinline>
+                    </video>
+                </div>
+                <svg height="100%" width="100%">
+                    <clipPath id="text-overlay">
+                        <text class="main_text" x="-.038em" y="0" dy=".76em">МАРС</text>
+                    </clipPath>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <section class="popup center">
+        <div class="popup_top">
+            <h1 class="popup_title">Бронирование
+                билетов</h1>
+            <button class="popup_close"><img src="img/close-button.svg" alt="close"></button>
+        </div>
+        <form class="popup_form">
+            <div class="form_controls-group">
+                <label for="check-in" class="form_label">
+                    Дата заезда
+                    <input type="text" id="check-in" class="form_control">
+                </label>
+                <label for="departure" class="form_label">
+                    Дата выезда
+                    <input type="text" id="departure" class="form_control">
+                </label>
+                <label for="amount" class="form_label">
+                    Количество
+                    <input type="text" id="amount" class="form_control">
+                </label>
+            </div>
+            <button type="submit" class="form_submit">Купить билеты</button>
+        </form>
+    </section>
+
+    <script>
+        const bg = document.querySelector('.fog');
+        window.addEventListener('mousemove', function (e) {
+            const x = e.clientX / window.innerWidth;
+            bg.style.backgroundPositionX = x * 150 + 'px';
+        });
+
+        const popup = document.querySelector('.popup');
+        const bayBtn = document.querySelector('.header_btn');
+        const closeBtn = document.querySelector('.popup_close');
+        bayBtn.addEventListener('click', () => {
+            popup.style.display = 'block'
+        })
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none'
+        });
+    </script>
+</body>
+
+</html>

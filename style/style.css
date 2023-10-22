@@ -1,0 +1,515 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/bebas-neue-bold/bebas-neue-bold.eot");
+  src: url("../fonts/bebas-neue-bold/bebas-neue-bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/bebas-neue-bold/bebas-neue-bold.otf") format("opentype"),
+    url("../fonts/bebas-neue-bold/bebas-neue-bold.svg") format("svg"),
+    url("../fonts/bebas-neue-bold/bebas-neue-bold.ttf") format("truetype"),
+    url("../fonts/bebas-neue-bold/bebas-neue-bold.woff") format("woff"),
+    url("../fonts/bebas-neue-bold/bebas-neue-bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  position: relative;
+  height: 1000px;
+}
+
+.center {
+  padding-left: 8.3vw;
+  padding-right: 8.3vw;
+}
+
+button {
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 121px;
+  padding-top: 30px;
+}
+
+.header_menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.menu_link {
+  color: #f2e1c2;
+  text-decoration: none;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.header_btn {
+  margin-left: 12px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  background: #f2e1c2;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  gap: 25px;
+  margin-left: -4px;
+}
+
+svg line {
+  stroke-dasharray: 1198;
+  stroke-dashoffset: 1198;
+  animation: draw 2s linear forwards;
+}
+
+svg .end {
+  opacity: 0;
+  animation: draw 0.4s linear forwards;
+  animation-delay: 1s;
+}
+
+.main_content {
+  width: 100%;
+  padding-top: 11px;
+}
+
+.main_subtitle {
+  color: #f23207;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: visible 1s linear forwards;
+  animation-delay: 0.5s;
+}
+
+.main_img svg {
+  width: auto;
+}
+
+.main_title {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: visible 1s linear forwards;
+  animation-delay: 1.5s;
+}
+
+.main_video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-clip-path: url(#text-overlay);
+  clip-path: url(#text-overlay);
+  object-fit: cover;
+}
+
+.main_video video {
+  width: 100%;
+  height: 100%;
+}
+
+.main_title svg {
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+.main_text {
+  font-size: 49.6vw;
+  font-family: "Bebas Neue", sans-serif;
+  line-height: normal;
+  letter-spacing: -10.729px;
+}
+
+/* popup ================ */
+.popup {
+  background-color: #f2e1c2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  display: none;
+}
+
+.popup_top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.popup_title {
+  color: #262526;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 7.9vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.85px;
+  text-transform: uppercase;
+  max-width: 588px;
+  margin-left: 2px;
+}
+
+.popup_close {
+  border: none;
+  height: 32px;
+  cursor: pointer;
+}
+
+.popup_close img {
+  height: 100%;
+}
+
+.popup_form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 60px;
+}
+
+.form_controls-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.form_label {
+  color: #262526;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 100%;
+}
+
+.form_control {
+  background: transparent;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid #262526;
+  outline: none;
+  padding-bottom: 12px;
+  color: #262526;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.form_submit {
+  width: 387px;
+  padding: 10px;
+  border-radius: 4px;
+  background: #262526;
+  color: #f2e1c2;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+/* ================ popup */
+
+
+/* fog =============== */
+
+.fog {
+  background: url("../img/main-back.png");
+  animation: back-shift 2s;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.fog_container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0;
+  animation: visible 1s linear forwards;
+  animation-delay: 1.5s;
+}
+
+.fog_img {
+  position: absolute;
+  height: 100%;
+  width: 300vw;
+  z-index: 2;
+}
+
+.fog_img-first {
+  background: url("../img/fog-1.png");
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center;
+  animation: marquee 20s linear infinite;
+}
+
+.fog_img-second {
+  background: url("../img/fog-2.png");
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center;
+  animation: marquee 5s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-200vw, 0, 0);
+  }
+}
+/*  ================= fog */
+
+/* animations =============== */
+@keyframes draw {
+  to {
+    opacity: 1;
+    fill: #d9d9d9;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes visible {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes back-shift {
+  from {
+    background-position-x: -150px;
+  }
+  to {
+    background-position-x: 0;
+  }
+}
+
+/* =============== animations */
+
+
+/* media query ===============  */
+@media (min-width: 320px) and (max-width: 425px) {
+  .header {
+    align-items: flex-start;
+    margin-bottom: 80px;
+  }
+  .header_menu {
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  .menu_link {
+    font-size: 14px;
+  }
+
+  .header_btn {
+    font-size: 14px;
+  }
+
+  .main_img svg {
+    height: 220px;
+  }
+
+  .main_subtitle {
+    font-size: 24px;
+  }
+
+  .popup_title {
+    max-width: 250px;
+    font-size: 10vw;
+  }
+
+  .popup_form {
+    align-items: center;
+  }
+
+  .form_label {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .form_control {
+    width: 100%;
+  }
+
+  .form_submit {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .form_controls-group {
+    justify-content: center;
+    row-gap: 40px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 720px) {
+  .form_controls-group {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .header_menu {
+    justify-content: flex-end;
+  }
+
+  .menu_link {
+    font-size: 14px;
+  }
+
+  .header_btn {
+    font-size: 14px;
+  }
+
+  .main_img svg {
+    height: 350px;
+  }
+
+  .popup_title {
+    max-width: 500px;
+  }
+
+  .popup_form {
+    align-items: center;
+  }
+
+  .form_label {
+    font-size: 14px;
+  }
+
+  .form_submit {
+    font-size: 14px;
+  }
+
+  .form_controls-group {
+    justify-content: center;
+    row-gap: 40px;
+  }
+}
+
+@media (width: 1024px) {
+  .main_img svg {
+    height: 450px;
+  }
+
+  .form_controls-group {
+    row-gap: 40px;
+  }
+}
+
+@media (width: 1280px) {
+  .main_img svg {
+    height: 550px;
+  }
+
+  .form_controls-group {
+    row-gap: 40px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .menu_link {
+    font-size: 24px;
+  }
+
+  .header_btn {
+    font-size: 24px;
+  }
+
+  .main_img svg {
+    height: 800px;
+  }
+
+  .main_subtitle {
+    font-size: 46px;
+  }
+
+  .form_controls-group {
+    gap: 100px;
+  }
+}
+
+@media (width: 2560px) {
+  .popup_close {
+    height: 50px;
+  }
+
+  .main_img svg {
+    height: 1050px;
+  }
+
+  .form_controls-group {
+    gap: 100px;
+  }
+
+  .form_label {
+    font-size: 28px;
+  }
+
+  .form_control {
+    font-size: 28px;
+  }
+
+  .form_submit {
+    font-size: 28px;
+    width: 450px;
+    padding: 15px;
+  }
+}
+/* =============== media query */
